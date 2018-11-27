@@ -1,0 +1,20 @@
+---
+# tasks
+
+- name: Instalando dependencias
+  yum: name=java
+
+- name: Configurando repositorio
+  yum:
+    name: https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
+    state: present
+
+- name: Instalando PostgreSQL
+  yum: name={{ item }} state=latest
+  with_items: 
+    - postgresql10-contrib
+    - postgresql10-server
+    - postgresql10-libs
+
+#- shell: '/usr/pgsql-10/bin/postgresql-10-setup initdb'
+...

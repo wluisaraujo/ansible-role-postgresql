@@ -1,0 +1,14 @@
+---
+# handlers file for iac-ansible-postgresql
+- name: Start PostgreSQL
+  service: name=postgresql-10 state=started
+
+- name: Reload PostgreSQL
+  service: name=postgresql-10 state=reloaded
+
+- name: Stop PostgreSQL
+  service: name=postgresql-10 state=stop
+  
+- name: Restar PostgreSQL
+  service: name=postgresql-10 state=restart
+...
