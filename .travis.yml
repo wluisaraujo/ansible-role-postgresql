@@ -51,7 +51,7 @@ install:
 
 
  # Install ansible role
- - ansible-galaxy install wluisaraujo.iac-ansible-postgresql
+ - ansible-galaxy install wluisaraujo.iac_sgdb_postgresql
 
 script:
  # Basic role syntax check
