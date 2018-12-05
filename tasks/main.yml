@@ -3,9 +3,9 @@
   import_tasks: base-centos.yml
   when: (ansible_distribution == "CentOS")
 
-- name: Instalando o PostgreSQL no RedHat
-  import_tasks: base-redhat.yml
-  when: (ansible_distribution == "RedHat")
+#- name: Instalando o PostgreSQL no RedHat
+#  import_tasks: base-redhat.yml
+#  when: (ansible_distribution == "RedHat")
 
 - name: Instalando o PostgreSQL no Debian
   import_tasks: base-debian.yml 
