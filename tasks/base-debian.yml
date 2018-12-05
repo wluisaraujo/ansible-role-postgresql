@@ -1,18 +1,21 @@
 ---
-- name: Instalar Dependencias
-  apt: 
-    name: openjdk-8-jdk
-    update_cache: yes 
+- apt_repository:
+    repo: 'deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main'
     state: present
-  register: DEPENDENCIA 
+    validate_certs: no
+  when: ( DEPENDENCIA is success )
+  register: REPOSITORIO
 
+- apt_key:
+    url: 'https://www.postgresql.org/media/keys/ACCC4CF8.asc'
+    state: present
+    validate_certs: no
+  register: REPOKEY
+  when: ( REPOSITORIO is success )
 
-#- name: Baixando .DEB PostgreSQL
-#  get_url: 
-#  url: http://repooo
-#  dest: /tmp/pacote.deb
-
-#- name: Instalando pacote .DEB
-#  apt: 
-#  deb: /tmp/pacote.deb
+- apt:
+    name: 'postgresql-10'
+    state: present
+    update_cache: true
+  when: ( REPOKEY is success )
 ...
