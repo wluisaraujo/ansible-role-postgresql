@@ -1,13 +1,16 @@
 ---
-- name: Instalando o PostgreSQL no CentOS
-  import_tasks: base-centos.yml
-  when: (ansible_distribution == "CentOS")
-
+- name: Importando tarefas para configuracoes de pacotes
+  include_tasks: config2{{ ansible_distribution }}.yml
+  
+#- name: Instalando o PostgreSQL no CentOS
+#  import_tasks: base-centos.yml
+#  when: (ansible_distribution == "CentOS")
+#
 #- name: Instalando o PostgreSQL no RedHat
 #  import_tasks: base-redhat.yml
 #  when: (ansible_distribution == "RedHat")
-
-- name: Instalando o PostgreSQL no Debian
-  import_tasks: base-debian.yml 
-  when: (ansible_distribution == "Debian")
+#
+#- name: Instalando o PostgreSQL no Debian
+#  import_tasks: base-debian.yml 
+#  when: (ansible_distribution == "Debian")
 ...
