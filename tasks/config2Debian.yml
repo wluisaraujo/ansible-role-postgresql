@@ -1,5 +1,7 @@
 ---
-- apt_repository:
+#
+- name: Configurando repositorio para "{{ ansible_distribution }}" versão "{{ ansible_distribution_major_version }}"
+  apt_repository:
     repo: 'deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main'
     state: present
     validate_certs: no
@@ -11,11 +13,15 @@
     state: present
     validate_certs: no
   register: REPOKEY
-  when: ( REPOSITORIO is success )
+  when: 
+    - ansible_os_family == "Debian"
+    - REPOSITORIO is success
 
 - apt:
     name: 'postgresql-10'
     state: present
     update_cache: true
-  when: ( REPOKEY is success )
-...
+  when: 
+    - ansible_os_family == "Debian"
+    - REPOKEY is success
+ ...
