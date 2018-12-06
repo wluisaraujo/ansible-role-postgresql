@@ -7,7 +7,7 @@
     validate_certs: 
   register: REPOSITORIO  
   when: 
-    - ansible_os_family == "Debian"
+    - ansible_distribution == "Debian"
 
 - apt_key:
     url: 'https://www.postgresql.org/media/keys/ACCC4CF8.asc'
@@ -15,7 +15,7 @@
     validate_certs: no
   register: REPOKEY
   when: 
-    - ansible_os_family == "Debian"
+    - ansible_distribution == "Debian"
     - REPOSITORIO is success
 
 - apt:
@@ -25,4 +25,4 @@
   when: 
     - ansible_os_family == "Debian"
     - REPOKEY is success
- ...
+...
