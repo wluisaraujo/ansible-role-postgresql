@@ -8,17 +8,17 @@
   when: 
     - ansible_distribution == "CentOS"
   
-- name: Instalando PostgreSQL
-  yum: 
-    name: {{ item }} 
-    state: latest
-  with_items: 
-    - postgresql10-contrib
-    - postgresql10-server
-    - postgresql10-libs
-  when: 
-  - result is success
-  - ansible_distribution == "CentOS"
+#- name: Instalando PostgreSQL
+#  yum: 
+#    name: {{ item }} 
+#    state: latest
+#  with_items: 
+#    - postgresql10-contrib
+#    - postgresql10-server
+#    - postgresql10-libs
+#  when: 
+#  - result is success
+#  - ansible_distribution == "CentOS"
 
 #- shell: '/usr/pgsql-10/bin/postgresql-10-setup initdb'
 ...
