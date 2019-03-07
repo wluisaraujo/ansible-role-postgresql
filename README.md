@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/wluisaraujo/iac-ansible-sgdb-postgresql.svg?branch=master)](https://travis-ci.org/wluisaraujo/iac-ansible-sgdb-postgresql)
 ---
-# IaC: with[Ansible](https://www.ansible) role to install and configure [AWX](https://github.com/ansible/awx)
+# IaC: with[Ansible](https://www.ansible) role to install and configure [PostgreSQL](https://www.postgresql.org/)
 ------------
 
 Description
