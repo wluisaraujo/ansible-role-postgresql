@@ -1,14 +1,46 @@
 ---
 # handlers file for iac-ansible-postgresql
+## SystemD
 - name: Start PostgreSQL
-  service: name=postgresql-10 state=started
+  systemd:
+    state: started
+    name: postgresql-11.service
+    enabled: yes
+    force: yes
+  ignore_errors: yes
+  when: 
+    - ansible_service_mgr == "systemd"
 
-- name: Reload PostgreSQL
-  service: name=postgresql-10 state=reloaded
+- name: Restart PostgreSQL
+  systemd:
+    state: restarted
+    name: postgresql-11.service
+    force: yes
+  ignore_errors: yes
+  when: 
+    - ansible_service_mgr == "systemd"    
+
+## SystemV
+- name: Start PostgreSQL
+  service:
+    state: started
+    name: postgresql-11.service
+    enabled: yes
+  when: 
+    - ansible_service_mgr == "service"
+
+- name: Restart PostgreSQL
+  service:
+    state: restarted
+    name: postgresql-11
+  when: 
+    - ansible_service_mgr == "service"
 
 - name: Stop PostgreSQL
-  service: name=postgresql-10 state=stop
-  
-- name: Restar PostgreSQL
-  service: name=postgresql-10 state=restart
+  service:
+    state: stopped
+    name: postgresql-11
+    enabled: yes
+  when: 
+    - ansible_service_mgr == "service"
 ...

@@ -19,7 +19,7 @@
     - REPOSITORIO is success
 
 - apt:
-    name: 'postgresql-10'
+    name: 'postgresql-11
     state: present
     update_cache: true
   when: 
