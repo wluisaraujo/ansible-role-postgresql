@@ -1,3 +1,4 @@
 ---
 # defaults file for iac-ansible-postgresql
+service_name: postgresql-11
 ...
