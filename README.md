@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/wluisaraujo/iac-ansible-sgdb-postgresql.svg?branch=master)](https://travis-ci.org/wluisaraujo/iac-ansible-sgdb-postgresql)
+[![Build Status](https://travis-ci.org/wluisaraujo/iac-ansible-postgresql.svg?branch=master)](https://travis-ci.org/wluisaraujo/iac-ansible-postgresql)
 ---
 # IaC: with [Ansible](https://www.ansible) role to install and configure [PostgreSQL](https://www.postgresql.org/)
 ------------
