@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: iac-ansible-postgresql
   author: w.luis.araujo
   description: "Install PostgreSQL"
   company: LUSAR | wluisaraujo.github.io
