@@ -13,7 +13,7 @@ services:
 
 env:
   global:
-    - ROLE_NAME: iac-ansible-postgresql
+    - ROLE_NAME: postgresql
     - ANSIBLE_ACTION_WARNINGS: "False"
     - ANSIBLE_COMMAND_WARNINGS: "False"
     - ANSIBLE_DEPRECATION_WARNINGS: "False"
@@ -47,7 +47,7 @@ install:
 
 
  # Install ansible role
- - ansible-galaxy install wluisaraujo.iac_ansible_postgresql
+ - ansible-galaxy install wluisaraujo.postgresql
 
 script:
  # Basic role syntax check
