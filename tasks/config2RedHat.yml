@@ -7,5 +7,10 @@
     state: present
 
 #- name: Instalando PostgreSQL
-#yum: name=POSTGRESQL state=latest
+#  yum: 
+#    name: {{ item }}
+#    state: latest
+#   loop:
+#     - posgresql
+#     - pgadmin4
 ...
