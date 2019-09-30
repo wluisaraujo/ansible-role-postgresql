@@ -13,6 +13,14 @@ Requirements
 
  *
 
+Installation
+------------
+
+```console
+vagrant@localhost:~$ ansible-galaxy install wluisaraujo.postgresql
+vagrant@localhost:~$ ansible-galaxy install -r wluisaraujo.postgresql/requirements.txt
+```
+
 Role Variables
 --------------
 
